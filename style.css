@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #507dc6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.mode-selection {
+    margin-bottom: 20px;
+}
+
+.mode-selection button {
+    padding: 12px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    background: white;
+    color: #507dc6;
+}
+
+.mode-selection button:hover {
+    transform: scale(1.05);
+}
+
+.mode-selection button.active {
+    background: #1e3f7a;
+    color: white;
+    outline: 3px solid white;
+}
+
+#status {
+    margin-bottom: 20px;
+    min-height: 35px;
+}
+
+.board {
+    width: 330px;
+    height: 330px;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.cell {
+    background: white;
+    color: black;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.cell:hover:not(.taken) {
+    background: #dbeafe;
+}
+
+.cell.x {
+    color: #507dc6;
+}
+
+.cell.o {
+    color: #e05a2b;
+}
+
+.cell.win {
+    background: #fef3c7;
+    outline: 3px solid #f59e0b;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0%   { transform: scale(0.9); }
+    60%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+#restartBtn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #22c55e;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#restartBtn:hover {
+    background: #16a34a;
+}
+
+.footer {
+    align-items: center;
+    margin-top: 150px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+ 
+.footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: 0.2s;
+}
+ 
+.footer a:hover {
+    color: #dbeafe;
+    border-bottom-color: #dbeafe;
+}
